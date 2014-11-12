@@ -15,7 +15,7 @@ Installation:
 ```
 Usage:
 =============
-Create instace
+Create instance
 ```lua
 local async = Async();
 ```
