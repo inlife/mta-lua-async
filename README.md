@@ -10,8 +10,8 @@ Installation:
 2. Download latest version of [async.lua](https://github.com/Inlife/mta-lua-async/blob/master/async.lua)
 3. Update your *meta.xml*
 ```xml
-    <script src="path/to/lib/slither.lua" type="server" />
-    <script src="path/to/lib/async.lua" type="server" />
+    <script src="path/to/lib/slither.lua" type="shared" />
+    <script src="path/to/lib/async.lua" type="shared" />
 ```
 Usage:
 =============
