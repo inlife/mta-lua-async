@@ -3,7 +3,7 @@ mta-lua-async
 Description:
 =============
 MTA:SA Async library. 
-If you have some heavy cyclic operations, that are dropping "Infite/too long execution", or operations that "freeze" your server for couple seconds, you can use this library.
+If you have some heavy cyclic operations, that are dropping "Infinite/too long execution", or operations that "freeze" your server for couple seconds, you can use this library.
 Installation:
 =============
 1. Download latest version of [slither.lua](https://bitbucket.org/bartbes/slither) (Dependency)
