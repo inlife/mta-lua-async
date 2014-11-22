@@ -6,13 +6,40 @@ MTA:SA Async library.
 If you have some heavy cyclic operations, that are dropping "Infinite/too long execution", or operations that "freeze" your server for couple seconds, you can use this library. It supports multiple running threads at a time.
 Installation:
 =============
-1. Download latest version of [slither.lua](https://bitbucket.org/bartbes/slither) (Dependency)
-2. Download latest version of [async.lua](https://github.com/Inlife/mta-lua-async/blob/master/async.lua)
-3. Update your *meta.xml*
+* Download latest version of **[async.lua](https://github.com/Inlife/mta-lua-async/blob/master/async.lua)**
+* Download latest version of **[slither.lua](https://bitbucket.org/bartbes/slither)** (Dependency)
+* Open **slither.lua** in your code editor, and remove *__"local"__* keyword on line ~25.
+
+>We are doing this only because of some MTA-specific include restrictions.
+
+##### Example:
+```lua
+local class =
+{
+	_VERSION = "Slither 20140904",
+	-- I have no better versioning scheme, deal with it
+	_DESCRIPTION = "Slither is a pythonic class library for lua",
+	_URL = "http://bitbucket.org/bartbes/slither",
+	_LICENSE = _LICENSE,
+}
+```
+to
+```lua
+class =
+{
+	_VERSION = "Slither 20140904",
+	-- I have no better versioning scheme, deal with it
+	_DESCRIPTION = "Slither is a pythonic class library for lua",
+	_URL = "http://bitbucket.org/bartbes/slither",
+	_LICENSE = _LICENSE,
+}
+```
+* Update your **meta.xml**
 ```xml
     <script src="path/to/lib/slither.lua" type="shared" />
     <script src="path/to/lib/async.lua" type="shared" />
 ```
+
 Usage:
 =============
 Create instance
