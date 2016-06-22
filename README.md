@@ -4,49 +4,29 @@ Description:
 =============
 MTA:SA Async library. 
 If you have some heavy cyclic operations, that are dropping "Infinite/too long execution", or operations that "freeze" your server for couple seconds, you can use this library. It supports multiple running threads at a time.
+
 Installation:
 =============
 * Download latest version of **[async.lua](https://github.com/Inlife/mta-lua-async/blob/master/async.lua)**
-* Download latest version of **[slither.lua](https://bitbucket.org/bartbes/slither)** (Dependency)
-* Open **slither.lua** in your code editor, and remove *__"local"__* keyword on line ~25.
-
->We are doing this only because of some MTA-specific include restrictions.
-
-##### Example:
-```lua
-local class =
-{
-	_VERSION = "Slither 20140904",
-	-- I have no better versioning scheme, deal with it
-	_DESCRIPTION = "Slither is a pythonic class library for lua",
-	_URL = "http://bitbucket.org/bartbes/slither",
-	_LICENSE = _LICENSE,
-}
-```
-to
-```lua
-class =
-{
-	_VERSION = "Slither 20140904",
-	-- I have no better versioning scheme, deal with it
-	_DESCRIPTION = "Slither is a pythonic class library for lua",
-	_URL = "http://bitbucket.org/bartbes/slither",
-	_LICENSE = _LICENSE,
-}
-```
+* Download latest version of **[slither.lua](https://github.com/Inlife/mta-lua-async/blob/master/slither.lua)** (Dependency, slightly modified version of [bartbes/slither](https://bitbucket.org/bartbes/slither))
 * Update your **meta.xml**
+
 ```xml
-    <script src="path/to/lib/slither.lua" type="shared" />
-    <script src="path/to/lib/async.lua" type="shared" />
+<script src="path/to/lib/slither.lua" type="shared" />
+<script src="path/to/lib/async.lua" type="shared" />
 ```
+
+**That's all, You are ready to go! :)**
 
 Usage:
 =============
 Create instance
+
 ```lua
 local async = Async();
 ```
 Enable debug, if you need to (it will print some useful information in server console)
+
 ```lua
 async:setDebug(true);
 ```
@@ -62,6 +42,7 @@ end);
 ```
 
 Iterate over big array of data
+
 ```lua
 async:foreach(vehicles, function(vehicle)
     vehicle:setHealth(1000);
@@ -69,6 +50,7 @@ end);
 ```
 
 There also an options for changing speed of your async caclulations:
+
 ```lua
 async:setPriority("low");    -- better fps
 async:setPriority("normal"); -- medium
@@ -82,6 +64,7 @@ async:setPriority(500, 100);
 Example:
 =============
 Load all vehicles from database, and create them in the game world (without lags)
+
 ```lua
 local _connection; -- initialized database connection
 local async = Async();
