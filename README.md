@@ -1,12 +1,12 @@
-mta-lua-async
-=============
-Description:
-=============
+# mta-lua-async
+
+## Description:
+
 MTA:SA Async library.
 If you have some heavy cyclic operations, that are dropping "Infinite/too long execution", or operations that "freeze" your server for couple seconds, you can use this library. It supports multiple running threads at a time.
 
-Installation:
-=============
+## Installation:
+
 * Download latest version of **[async.lua](https://github.com/Inlife/mta-lua-async/blob/master/async.lua)**
 * Put it inside your resource folder
 * Update resource **meta.xml** file:
@@ -19,8 +19,8 @@ Installation:
 
 **That's all, You are ready to go! :)**
 
-Usage:
-=============
+## Usage
+
 Enable debug, if you need to (it will print some useful information in server console)
 
 ```lua
@@ -57,8 +57,7 @@ Async:setPriority(500, 100);
 -- 500ms is "sleeping" time, 
 -- 100ms is "working" time, for every current async thread
 ```
-Example:
-=============
+## Example
 Load all vehicles from database, and create them in the game world (without lags)
 
 ```lua
@@ -88,7 +87,8 @@ dbQuery(function(qh)
 end, _connection, "SELECT * FROM vehicles");
 ```
 
-#Upgrading:
+## Upgrading
+
 If you've used library before "Singleton" update:
 
 ```lua
@@ -111,7 +111,7 @@ end);
 
 But, still: it's not recommended! :P
 
-#Under the hood:
+## Under the hood:
 If you want to create independent/scope-isolated instance of Async manager, you can do it that way:
 
 ```lua
@@ -120,5 +120,5 @@ local isolatedAsync = _Async();
 
 You can find kinda well documented code inside async.lua file. If you need some help, you can always create an issue.
 
-#Other:
+## Other 
 Library uses [bartbes/slither](https://bitbucket.com/bartbes/slither) class library. Check it out. @Bartbes, thank you so much! :)
